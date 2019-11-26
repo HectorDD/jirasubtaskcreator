@@ -4,8 +4,8 @@ import json
 
 baseUrl="https://jira.consensuscorpdev.com/rest/api/2/issue"
 headers = {'content-type' : 'application/json'}
-jiraUser=''
-jiraPassword=''
+jiraUser='hdelgado'
+jiraPassword='olakase1!'
 
 def bodyBuilder(subtask):
 	projectObj={"key":subtask[0]}
@@ -36,10 +36,12 @@ def defineSubtasksForESBMigration(parent,assignee):
 	defaultSubTasks.append(pamDb)
 	codeReview=["CC",parent,"Code review","Code review from other team member is required",assignee,"another team member approved the changes"]
 	defaultSubTasks.append(codeReview)
+	bddExecution=["CC",parent,"BDD Execution","BDD Execution for ESB and PAM Proxy sides succesfully",assignee,"Must execute a BDD passing thru the ESB and PAM Proxy paths succesfully, compare request XMLs"]
+	defaultSubTasks.append(bddExecution)
 	return defaultSubTasks
 
 
-defaultSubTasks=defineSubtasksForESBMigration("CC-6438","jrivera1")
+defaultSubTasks=defineSubtasksForESBMigration("CC-6689","hdelgado")
 
 
 for i in defaultSubTasks:
