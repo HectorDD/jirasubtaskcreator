@@ -4,8 +4,8 @@ import json
 
 baseUrl="https://jira.consensuscorpdev.com/rest/api/2/issue"
 headers = {'content-type' : 'application/json'}
-jiraUser='hdelgado'
-jiraPassword='olakase1!'
+jiraUser=''
+jiraPassword=''
 
 def bodyBuilder(subtask):
 	projectObj={"key":subtask[0]}
